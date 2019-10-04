@@ -1,0 +1,677 @@
+Last login: Mon Sep 30 11:06:35 on console
+501 tech 11:11:55 ~ $ aprnt ClipGrab.download.recipe
+Processing ClipGrab.download.recipe...
+WARNING: ClipGrab.download.recipe is missing trust info and FAIL_RECIPES_WITHOUT_TRUST_INFO is not set. Proceeding...
+URLTextSearcher
+{'Input': {'re_flags': (
+    IGNORECASE
+),
+           're_pattern': u'https://download.clipgrab.org/(ClipGrab-[^"]*.dmg)"',
+           'result_output_var_name': u'url',
+           'url': u'https://clipgrab.org'}}
+URLTextSearcher: No value supplied for CURL_PATH, setting default value of: /usr/bin/curl
+URLTextSearcher: Found matching text (url): ClipGrab-3.8.5.dmg
+{'Output': {u'url': 'ClipGrab-3.8.5.dmg'}}
+URLDownloader
+{'Input': {'CURL_PATH': '/usr/bin/curl',
+           'url': u'https://download.clipgrab.org/ClipGrab-3.8.5.dmg'}}
+URLDownloader: No value supplied for CHECK_FILESIZE_ONLY, setting default value of: False
+URLDownloader: Storing new Last-Modified header: Mon, 16 Sep 2019 20:18:27 GMT
+URLDownloader: Storing new ETag header: "492c139-592b14e796ac0"
+URLDownloader: Downloaded /Users/localadmin/Library/AutoPkg/Cache/com.github.peshay.download.ClipGrab/downloads/ClipGrab-3.8.5.dmg
+{'Output': {'download_changed': True,
+            'etag': '"492c139-592b14e796ac0"',
+            'last_modified': 'Mon, 16 Sep 2019 20:18:27 GMT',
+            'pathname': u'/Users/localadmin/Library/AutoPkg/Cache/com.github.peshay.download.ClipGrab/downloads/ClipGrab-3.8.5.dmg',
+            'url_downloader_summary_result': {'data': {'download_path': u'/Users/localadmin/Library/AutoPkg/Cache/com.github.peshay.download.ClipGrab/downloads/ClipGrab-3.8.5.dmg'},
+                                              'summary_text': 'The following new items were downloaded:'}}}
+EndOfCheckPhase
+{'Input': {}}
+{'Output': {}}
+Receipt written to /Users/localadmin/Library/AutoPkg/Cache/com.github.peshay.download.ClipGrab/receipts/ClipGrab.download-receipt-20190930-112220.plist
+
+The following new items were downloaded:
+    Download Path                                                                                       
+    -------------                                                                                       
+    /Users/localadmin/Library/AutoPkg/Cache/com.github.peshay.download.ClipGrab/downloads/ClipGrab-3.8.5.dmg  
+502 tech 11:22:20 ~ $ open /Users/localadmin/Library/AutoPkg/Cache/com.github.peshay.download.ClipGrab/downloads/ClipGrab-3.8.5.dmg
+503 tech 11:22:34 ~ $ codesigapp /Volumes/ClipGrab\ 3.8.5/ClipGrab.app 
+-bash: codesigapp: command not found
+504 tech 11:23:07 ~ $ codesignapp /Volumes/ClipGrab\ 3.8.5/ClipGrab.app 
+Executable=/Volumes/ClipGrab 3.8.5/ClipGrab.app/Contents/MacOS/ClipGrab
+Identifier=de.clipgrab.ClipGrab
+Format=app bundle with Mach-O thin (x86_64)
+CodeDirectory v=20200 size=10228 flags=0x0(none) hashes=314+3 location=embedded
+Signature size=9016
+Timestamp=Sep 16, 2019 at 2:17:35 PM
+Info.plist entries=11
+TeamIdentifier=E8BJ3ZV5W8
+Sealed Resources version=2 rules=13 files=31
+Nested=Frameworks/QtWebEngineCore.framework
+Nested=PlugIns/imageformats/libqmacjp2.dylib
+Nested=PlugIns/imageformats/libqgif.dylib
+Nested=PlugIns/imageformats/libqico.dylib
+Nested=Frameworks/QtPositioning.framework
+Nested=PlugIns/imageformats/libqtga.dylib
+Nested=Frameworks/QtWidgets.framework
+Nested=Frameworks/QtSvg.framework
+Nested=PlugIns/platforms/libqcocoa.dylib
+Nested=Frameworks/QtCore.framework
+Nested=Frameworks/QtXml.framework
+Nested=Frameworks/QtPrintSupport.framework
+Nested=Frameworks/QtWebEngineWidgets.framework
+Nested=Frameworks/QtWebChannel.framework
+Nested=PlugIns/imageformats/libqwbmp.dylib
+Nested=PlugIns/imageformats/libqwebp.dylib
+Nested=PlugIns/printsupport/libcocoaprintersupport.dylib
+Nested=Frameworks/QtQml.framework
+Nested=Frameworks/QtQuick.framework
+Nested=Frameworks/QtGui.framework
+Nested=MacOS/ffmpeg
+Nested=Frameworks/QtNetwork.framework
+Nested=PlugIns/imageformats/libqicns.dylib
+Nested=PlugIns/bearer/libqgenericbearer.dylib
+Nested=PlugIns/imageformats/libqjpeg.dylib
+Nested=Frameworks/QtQuickWidgets.framework
+Nested=PlugIns/imageformats/libqtiff.dylib
+Nested=PlugIns/iconengines/libqsvgicon.dylib
+designated => identifier "de.clipgrab.ClipGrab" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = E8BJ3ZV5W8
+505 tech 11:23:16 ~ $ ap search ClipGrab
+
+Name                         Repo                     Path                                    
+----                         ----                     ----                                    
+ClipGrab.filewave.recipe     peshay-recipes           ClipGrab/ClipGrab.filewave.recipe       
+ClipGrab.download.recipe     peshay-recipes           ClipGrab/ClipGrab.download.recipe       
+ClipGrab.munki.recipe        wardsparadox-recipes     ClipGrab/ClipGrab.munki.recipe          
+
+To add a new recipe repo, use 'autopkg repo-add <repo name>'
+506 tech 11:25:49 ~ $ ap add-repo wardsparadox-recipes.git
+Usage: autopkg <verb> <options>, where <verb> is one of the following:
+
+    audit              (Audit one or more recipes.)
+    help               (Display this help)
+    info               (Get info about configuration or a recipe)
+    install            (Run one or more install recipes. Example: autopkg install Firefox -- equivalent to: autopkg run Firefox.install)
+    list-processors    (List available core Processors)
+    list-recipes       (List recipes available locally)
+    make-override      (Make a recipe override)
+    new-recipe         (Make a new template recipe)
+    processor-info     (Get information about a specific processor)
+    repo-add           (Add one or more recipe repo from a URL)
+    repo-delete        (Delete a recipe repo)
+    repo-list          (List installed recipe repos)
+    repo-update        (Update one or more recipe repos)
+    run                (Run one or more recipes)
+    search             (Search for recipes on GitHub.)
+    update-trust-info  (Update or add parent recipe trust info for a recipe override.)
+    verify-trust-info  (Verify parent recipe trust info for a recipe override.)
+    version            (Print the current version of autopkg)
+
+autopkg <verb> --help for more help for that verb
+507 tech 11:26:11 ~ $ ap repo-add wardsparadox-recipes.git
+Attempting git clone...
+
+Adding /Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.wardsparadox-recipes to RECIPE_SEARCH_DIRS...
+Updated search path:
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.timsutton-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.jessepeterson-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.jaharmi-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.cgerke-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.jps3-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.hansen-m-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.joshua-d-miller-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.n8felton-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.scriptingosx-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.homebysix-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.mosen-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.nmcspadden-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.grahamgilbert-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.golbiga-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.gregneagle-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.arubdesu-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.gmarnin-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.groob-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.andrewvalentine-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.eholtam-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.foigus-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.arubdesu.office-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.macvfx-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.dataJAR-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.nzmacgeek-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.neilmartin83-recipes'
+  '.'
+  '/Users/localadmin/Library/AutoPkg/Recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.rtrouton-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.jazzace-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.hjuutilainen-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.MLBZ521-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.novaksam-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.apizz-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.precursorca-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.peshay-recipes'
+  '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.wardsparadox-recipes'
+508 tech 11:26:31 ~ $ ap new-recipe -h
+Usage: autopkg new-recipe [options] recipe_pathname
+Make a new template recipe.
+
+Options:
+  -h, --help            show this help message and exit
+  --prefs=FILE_PATH     
+  -i IDENTIFIER, --identifier=IDENTIFIER
+                        Recipe identifier
+  -p PARENT_IDENTIFIER, --parent-identifier=PARENT_IDENTIFIER
+                        Parent recipe identifier for this recipe.
+509 tech 11:28:38 ~ $ ap new-recipe -i com.github.jazzace.download.ClipGrabMac -p com.github.peshay.download.ClipGrab
+Must specify exactly one recipe pathname!
+Usage: autopkg new-recipe [options] recipe_pathname
+Make a new template recipe.
+
+510 tech 11:29:39 ~ $ ap new-recipe /Users/localadmin/Library/AutoPkg/Recipes/ClipGrabMac.download.recipe  -i com.github.jazzace.download.ClipGrabMac -p com.github.peshay.download.ClipGrab
+Saved new recipe to /Users/localadmin/Library/AutoPkg/Recipes/ClipGrabMac.download.recipe
+511 tech 11:30:36 ~ $ ap processor-list
+Usage: autopkg <verb> <options>, where <verb> is one of the following:
+
+    audit              (Audit one or more recipes.)
+    help               (Display this help)
+    info               (Get info about configuration or a recipe)
+    install            (Run one or more install recipes. Example: autopkg install Firefox -- equivalent to: autopkg run Firefox.install)
+    list-processors    (List available core Processors)
+    list-recipes       (List recipes available locally)
+    make-override      (Make a recipe override)
+    new-recipe         (Make a new template recipe)
+    processor-info     (Get information about a specific processor)
+    repo-add           (Add one or more recipe repo from a URL)
+    repo-delete        (Delete a recipe repo)
+    repo-list          (List installed recipe repos)
+    repo-update        (Update one or more recipe repos)
+    run                (Run one or more recipes)
+    search             (Search for recipes on GitHub.)
+    update-trust-info  (Update or add parent recipe trust info for a recipe override.)
+    verify-trust-info  (Verify parent recipe trust info for a recipe override.)
+    version            (Print the current version of autopkg)
+
+autopkg <verb> --help for more help for that verb
+512 tech 11:36:24 ~ $ ap list-processors
+AppDmgVersioner
+AppPkgCreator
+BrewCaskInfoProvider
+CURLDownloader
+CURLTextSearcher
+CodeSignatureVerifier
+Copier
+DeprecationWarning
+DmgCreator
+DmgMounter
+EndOfCheckPhase
+FileCreator
+FileFinder
+FileMover
+FlatPkgPacker
+FlatPkgUnpacker
+GitHubReleasesInfoProvider
+InstallFromDMG
+Installer
+MunkiCatalogBuilder
+MunkiImporter
+MunkiInfoCreator
+MunkiInstallsItemsCreator
+MunkiPkginfoMerger
+MunkiSetDefaultCatalog
+PackageRequired
+PathDeleter
+PkgCopier
+PkgCreator
+PkgExtractor
+PkgInfoCreator
+PkgPayloadUnpacker
+PkgRootCreator
+PlistEditor
+PlistReader
+SparkleUpdateInfoProvider
+StopProcessingIf
+Symlinker
+URLDownloader
+URLTextSearcher
+Unarchiver
+Versioner
+513 tech 11:36:35 ~ $ appi CodeSignatureVerifier
+Description: Verifies application bundle or installer package signature.
+
+    Requires version 0.3.1.
+Input variables:
+   requirement:
+     required: False
+     description: A requirement string to pass to codesign. This should always be set to the original designated requirement of the application and can be determined by running:
+	$ codesign --display -r- <path_to_app>
+   input_path:
+     required: True
+     description: File path to an application bundle (.app) or installer package (.pkg or .mpkg). Can point to a path inside a .dmg which will be mounted.
+   deep_verification:
+     required: False
+     description: Boolean value to specify that any nested code content will be recursively verified as to its full content. Note that this option is ignored if the current system version is less than 10.9.
+   DISABLE_CODE_SIGNATURE_VERIFICATION:
+     required: False
+     description: Skip this Processor step altogether. Typically this would be invoked using AutoPkg's defaults or via '--key' CLI options at the time of the run, rather than being defined explicitly within a recipe.
+   codesign_additional_arguments:
+     required: False
+     description: Array of additional argument strings to pass to codesign.
+   strict_verification:
+     required: False
+     description: Boolean value to control the strictness of signature validation. If not defined, codesign defaults are used. Note that this option is ignored if the current system version is less than 10.11.
+   expected_authority_names:
+     required: False
+     description: An array of strings defining a list of expected certificate authority names. Complete list of the certificate name chain is required and it needs to be in the correct order. These can be determined by running: 
+	pkgutil --check-signature <path_to_pkg>
+Output variables:
+514 tech 11:37:17 ~ $ appi URLDownloader
+Description: Downloads a URL to the specified download_dir using curl.
+Input variables:
+   CHECK_FILESIZE_ONLY:
+     default: False
+     required: False
+     description: If True, a server's ETag and Last-Modified headers will not be checked to verify whether a download is newer than a cached item, and only Content-Length (filesize) will be used. This is useful for cases where a download always redirects to different mirrors, which could cause items to be needlessly re-downloaded. Defaults to False.
+   download_dir:
+     required: False
+     description: The directory where the file will be downloaded to. Defaults to RECIPE_CACHE_DIR/downloads.
+   PKG:
+     required: False
+     description: Local path to the pkg/dmg we'd otherwise download. If provided, the download is skipped and we just use this package or disk image.
+   curl_opts:
+     required: False
+     description: Optional array of options to include with the download request.
+   CURL_PATH:
+     default: /usr/bin/curl
+     required: False
+     description: Path to curl binary. Defaults to /usr/bin/curl.
+   url:
+     required: True
+     description: The URL to download.
+   filename:
+     required: False
+     description: Filename to override the URL's tail.
+   request_headers:
+     required: False
+     description: Optional dictionary of headers to include with the download request.
+Output variables:
+   download_changed:
+     description: Boolean indicating if the download has changed since the last time it was downloaded.
+   last_modified:
+     description: last-modified header for the downloaded item.
+   pathname:
+     description: Path to the downloaded file.
+   etag:
+     description: etag header for the downloaded item.
+   url_downloader_summary_result:
+     description: Description of interesting results.
+515 tech 11:37:48 ~ $ aprnt ClipGrabMac.download
+Processing ClipGrabMac.download...
+WARNING: ClipGrabMac.download is missing trust info and FAIL_RECIPES_WITHOUT_TRUST_INFO is not set. Proceeding...
+URLTextSearcher
+{'Input': {'re_flags': (
+    IGNORECASE
+),
+           're_pattern': u'https://download.clipgrab.org/(ClipGrab-[^"]*.dmg)"',
+           'result_output_var_name': u'url',
+           'url': u'https://clipgrab.org'}}
+URLTextSearcher: No value supplied for CURL_PATH, setting default value of: /usr/bin/curl
+URLTextSearcher: Found matching text (url): ClipGrab-3.8.5.dmg
+{'Output': {u'url': 'ClipGrab-3.8.5.dmg'}}
+URLDownloader
+{'Input': {'CURL_PATH': '/usr/bin/curl',
+           'url': u'https://download.clipgrab.org/ClipGrab-3.8.5.dmg'}}
+URLDownloader: No value supplied for CHECK_FILESIZE_ONLY, setting default value of: False
+URLDownloader: Storing new Last-Modified header: Mon, 16 Sep 2019 20:18:27 GMT
+URLDownloader: Storing new ETag header: "492c139-592b14e796ac0"
+URLDownloader: Downloaded /Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.download.ClipGrabMac/downloads/ClipGrab-3.8.5.dmg
+{'Output': {'download_changed': True,
+            'etag': '"492c139-592b14e796ac0"',
+            'last_modified': 'Mon, 16 Sep 2019 20:18:27 GMT',
+            'pathname': u'/Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.download.ClipGrabMac/downloads/ClipGrab-3.8.5.dmg',
+            'url_downloader_summary_result': {'data': {'download_path': u'/Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.download.ClipGrabMac/downloads/ClipGrab-3.8.5.dmg'},
+                                              'summary_text': 'The following new items were downloaded:'}}}
+EndOfCheckPhase
+{'Input': {}}
+{'Output': {}}
+CodeSignatureVerifier
+{'Input': {'codesign_additional_arguments': u'identifier "de.clipgrab.ClipGrab" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = E8BJ3ZV5W8',
+           'input_path': u'/Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.download.ClipGrabMac/downloads/ClipGrab-3.8.5.dmg'}}
+CodeSignatureVerifier: Verifying code signature...
+CodeSignatureVerifier: Deep verification enabled...
+CodeSignatureVerifier: Strict verification not defined. Using codesign defaults...
+CodeSignatureVerifier: i: No such file or directory
+Code signature verification failed. Note that all verifications can be disabled by setting the variable DISABLE_CODE_SIGNATURE_VERIFICATION to a non-empty value.
+Failed.
+Receipt written to /Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.download.ClipGrabMac/receipts/ClipGrabMac-receipt-20190930-114110.plist
+
+The following recipes failed:
+    ClipGrabMac.download
+        Error in com.github.jazzace.download.ClipGrabMac: Processor: CodeSignatureVerifier: Error: Code signature verification failed. Note that all verifications can be disabled by setting the variable DISABLE_CODE_SIGNATURE_VERIFICATION to a non-empty value.
+
+The following new items were downloaded:
+    Download Path                                                                                           
+    -------------                                                                                           
+    /Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.download.ClipGrabMac/downloads/ClipGrab-3.8.5.dmg  
+516 tech 11:41:10 ~ $ appi CodeSignatureVerifier
+Description: Verifies application bundle or installer package signature.
+
+    Requires version 0.3.1.
+Input variables:
+   requirement:
+     required: False
+     description: A requirement string to pass to codesign. This should always be set to the original designated requirement of the application and can be determined by running:
+	$ codesign --display -r- <path_to_app>
+   input_path:
+     required: True
+     description: File path to an application bundle (.app) or installer package (.pkg or .mpkg). Can point to a path inside a .dmg which will be mounted.
+   deep_verification:
+     required: False
+     description: Boolean value to specify that any nested code content will be recursively verified as to its full content. Note that this option is ignored if the current system version is less than 10.9.
+   DISABLE_CODE_SIGNATURE_VERIFICATION:
+     required: False
+     description: Skip this Processor step altogether. Typically this would be invoked using AutoPkg's defaults or via '--key' CLI options at the time of the run, rather than being defined explicitly within a recipe.
+   codesign_additional_arguments:
+     required: False
+     description: Array of additional argument strings to pass to codesign.
+   strict_verification:
+     required: False
+     description: Boolean value to control the strictness of signature validation. If not defined, codesign defaults are used. Note that this option is ignored if the current system version is less than 10.11.
+   expected_authority_names:
+     required: False
+     description: An array of strings defining a list of expected certificate authority names. Complete list of the certificate name chain is required and it needs to be in the correct order. These can be determined by running: 
+	pkgutil --check-signature <path_to_pkg>
+Output variables:
+517 tech 11:42:53 ~ $ aprnt ClipGrabMac.download
+Processing ClipGrabMac.download...
+WARNING: ClipGrabMac.download is missing trust info and FAIL_RECIPES_WITHOUT_TRUST_INFO is not set. Proceeding...
+URLTextSearcher
+{'Input': {'re_flags': (
+    IGNORECASE
+),
+           're_pattern': u'https://download.clipgrab.org/(ClipGrab-[^"]*.dmg)"',
+           'result_output_var_name': u'url',
+           'url': u'https://clipgrab.org'}}
+URLTextSearcher: No value supplied for CURL_PATH, setting default value of: /usr/bin/curl
+URLTextSearcher: Found matching text (url): ClipGrab-3.8.5.dmg
+{'Output': {u'url': 'ClipGrab-3.8.5.dmg'}}
+URLDownloader
+{'Input': {'CURL_PATH': '/usr/bin/curl',
+           'url': u'https://download.clipgrab.org/ClipGrab-3.8.5.dmg'}}
+URLDownloader: No value supplied for CHECK_FILESIZE_ONLY, setting default value of: False
+URLDownloader: Storing new Last-Modified header: Mon, 16 Sep 2019 20:18:27 GMT
+URLDownloader: Storing new ETag header: "492c139-592b14e796ac0"
+URLDownloader: Downloaded /Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.download.ClipGrabMac/downloads/ClipGrab-3.8.5.dmg
+{'Output': {'download_changed': True,
+            'etag': '"492c139-592b14e796ac0"',
+            'last_modified': 'Mon, 16 Sep 2019 20:18:27 GMT',
+            'pathname': u'/Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.download.ClipGrabMac/downloads/ClipGrab-3.8.5.dmg',
+            'url_downloader_summary_result': {'data': {'download_path': u'/Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.download.ClipGrabMac/downloads/ClipGrab-3.8.5.dmg'},
+                                              'summary_text': 'The following new items were downloaded:'}}}
+EndOfCheckPhase
+{'Input': {}}
+{'Output': {}}
+CodeSignatureVerifier
+{'Input': {'input_path': u'/Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.download.ClipGrabMac/downloads/ClipGrab-3.8.5.dmg/ClipGrab.app',
+           'requirement': u'identifier "de.clipgrab.ClipGrab" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = E8BJ3ZV5W8'}}
+CodeSignatureVerifier: Mounted disk image /Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.download.ClipGrabMac/downloads/ClipGrab-3.8.5.dmg
+CodeSignatureVerifier: Verifying code signature...
+CodeSignatureVerifier: Deep verification enabled...
+CodeSignatureVerifier: Strict verification not defined. Using codesign defaults...
+CodeSignatureVerifier: /private/tmp/dmg.qL6OK9/ClipGrab.app: valid on disk
+CodeSignatureVerifier: /private/tmp/dmg.qL6OK9/ClipGrab.app: satisfies its Designated Requirement
+CodeSignatureVerifier: /private/tmp/dmg.qL6OK9/ClipGrab.app: explicit requirement satisfied
+CodeSignatureVerifier: Signature is valid
+{'Output': {}}
+Receipt written to /Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.download.ClipGrabMac/receipts/ClipGrabMac-receipt-20190930-114431.plist
+
+The following new items were downloaded:
+    Download Path                                                                                           
+    -------------                                                                                           
+    /Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.download.ClipGrabMac/downloads/ClipGrab-3.8.5.dmg  
+518 tech 11:44:31 ~ $ !!
+aprnt ClipGrabMac.download
+Processing ClipGrabMac.download...
+WARNING: ClipGrabMac.download is missing trust info and FAIL_RECIPES_WITHOUT_TRUST_INFO is not set. Proceeding...
+URLTextSearcher
+{'Input': {'re_flags': (
+    IGNORECASE
+),
+           're_pattern': u'https://download.clipgrab.org/(ClipGrab-[^"]*.dmg)"',
+           'result_output_var_name': u'url',
+           'url': u'https://clipgrab.org'}}
+URLTextSearcher: No value supplied for CURL_PATH, setting default value of: /usr/bin/curl
+URLTextSearcher: Found matching text (url): ClipGrab-3.8.5.dmg
+{'Output': {u'url': 'ClipGrab-3.8.5.dmg'}}
+URLDownloader
+{'Input': {'CURL_PATH': '/usr/bin/curl',
+           'url': u'https://download.clipgrab.org/ClipGrab-3.8.5.dmg'}}
+URLDownloader: No value supplied for CHECK_FILESIZE_ONLY, setting default value of: False
+URLDownloader: Item at URL is unchanged.
+URLDownloader: Using existing /Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.download.ClipGrabMac/downloads/ClipGrab-3.8.5.dmg
+{'Output': {'pathname': u'/Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.download.ClipGrabMac/downloads/ClipGrab-3.8.5.dmg'}}
+EndOfCheckPhase
+{'Input': {}}
+{'Output': {}}
+CodeSignatureVerifier
+{'Input': {'input_path': u'/Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.download.ClipGrabMac/downloads/ClipGrab-3.8.5.dmg/ClipGrab.app',
+           'requirement': u'identifier "de.clipgrab.ClipGrab" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = E8BJ3ZV5W8'}}
+CodeSignatureVerifier: Mounted disk image /Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.download.ClipGrabMac/downloads/ClipGrab-3.8.5.dmg
+CodeSignatureVerifier: Verifying code signature...
+CodeSignatureVerifier: Deep verification enabled...
+CodeSignatureVerifier: Strict verification not defined. Using codesign defaults...
+CodeSignatureVerifier: /private/tmp/dmg.pH407P/ClipGrab.app: valid on disk
+CodeSignatureVerifier: /private/tmp/dmg.pH407P/ClipGrab.app: satisfies its Designated Requirement
+CodeSignatureVerifier: /private/tmp/dmg.pH407P/ClipGrab.app: explicit requirement satisfied
+CodeSignatureVerifier: Signature is valid
+{'Output': {}}
+Receipt written to /Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.download.ClipGrabMac/receipts/ClipGrabMac-receipt-20190930-114501.plist
+
+Nothing downloaded, packaged or imported.
+519 tech 11:45:01 ~ $ appi AppPkgCreator
+Description: Calls autopkgserver to create a package from an application.
+Input variables:
+   pkg_path:
+     required: False
+     description: The pathname for the pkg to be created. If not set, defaults to %RECIPE_CACHE_DIR%/%app_name%-%version%.pkg
+   app_path:
+     required: False
+     description: Path to an application to be packaged. Can be on a disk image and globbed. If not set, defaults to %pathname%/*.app. Typically %pathname% points to a disk image downloaded in a prior recipe step.
+   version:
+     required: False
+     description: Version of the app. If not set, will be extracted from the CFBundleShortVersionString in the app's Info.plist.
+   force_pkg_build:
+     required: False
+     description: When set, this forces building a new package even if a package already exists in the output directory with the same identifier and version number. Defaults to False
+   bundleid:
+     required: False
+     description: Bundle identifier of the app. If not set, will be extracted from the CFBundleIdentifier in the app's Info.plist.
+Output variables:
+   app_pkg_creator_summary_result:
+     description: Description of interesting results.
+   version:
+     description: Version of the app.
+   new_package_request:
+     description: True if a new package was actually requested to be built. False if a package with the same filename, identifier and version already exists and thus no package was built (see 'force_pkg_build' input variable.)
+520 tech 11:47:33 ~ $ history 30
+  491  aprnt "Recipe Robot.install"
+  492  reciperobot
+  493  ln -s "/Applications/Recipe Robot.app/Contents/Resources/scripts/recipe-robot" /usr/local/bin/recipe-robot
+  494  sudo ln -s "/Applications/Recipe Robot.app/Contents/Resources/scripts/recipe-robot" /usr/local/bin/recipe-robot
+  495  recipe-robot help
+  496  recipe-robot -h
+  497  recipe-robot -v /Volumes/DSServer/Users/Shared/Deploy/Files/Vectorworks\ 2019\ Installer.app 
+  498  recipe-robot /Volumes/DSServer/Users/Shared/Deploy/Files/Vectorworks\ 2019\ Installer.app/Contents/MacOS/Vectorworks\ 2019\ Installer 
+  499  aprnt Vectorworks2019-NNA.download
+  500  recipe-robot -v /Volumes/Vectorworks2019-SP5-507608-SeriesBEG-installer1-osx/Vectorworks\ 2019\ Installer.app/Contents/Resources/installer/Install\ Vectorworks2019.app 
+  501  aprnt ClipGrab.download.recipe
+  502  open /Users/localadmin/Library/AutoPkg/Cache/com.github.peshay.download.ClipGrab/downloads/ClipGrab-3.8.5.dmg
+  503  codesigapp /Volumes/ClipGrab\ 3.8.5/ClipGrab.app 
+  504  codesignapp /Volumes/ClipGrab\ 3.8.5/ClipGrab.app 
+  505  ap search ClipGrab
+  506  ap add-repo wardsparadox-recipes.git
+  507  ap repo-add wardsparadox-recipes.git
+  508  ap new-recipe -h
+  509  ap new-recipe -i com.github.jazzace.download.ClipGrabMac -p com.github.peshay.download.ClipGrab
+  510  ap new-recipe /Users/localadmin/Library/AutoPkg/Recipes/ClipGrabMac.download.recipe  -i com.github.jazzace.download.ClipGrabMac -p com.github.peshay.download.ClipGrab
+  511  ap processor-list
+  512  ap list-processors
+  513  appi CodeSignatureVerifier
+  514  appi URLDownloader
+  515  aprnt ClipGrabMac.download
+  516  appi CodeSignatureVerifier
+  517  aprnt ClipGrabMac.download
+  518  aprnt ClipGrabMac.download
+  519  appi AppPkgCreator
+  520  history 30
+521 tech 11:48:24 ~ $ ap new-recipe /Users/localadmin/Desktop/ClipGrabMac.download.recipe  -i com.github.jazzace.download.ClipGrabMac -p com.github.peshay.download.ClipGrab
+Saved new recipe to /Users/localadmin/Desktop/ClipGrabMac.download.recipe
+522 tech 11:48:55 ~ $ ap new-recipe /Users/localadmin/Library/AutoPkg/Recipes/ClipGrabMac.pkg.recipe  -i com.github.jazzace.pkg.ClipGrabMac -p com.github.jazzace.download.ClipGrabMac
+Saved new recipe to /Users/localadmin/Library/AutoPkg/Recipes/ClipGrabMac.pkg.recipe
+523 tech 11:49:48 ~ $ !519
+appi AppPkgCreator
+Description: Calls autopkgserver to create a package from an application.
+Input variables:
+   pkg_path:
+     required: False
+     description: The pathname for the pkg to be created. If not set, defaults to %RECIPE_CACHE_DIR%/%app_name%-%version%.pkg
+   app_path:
+     required: False
+     description: Path to an application to be packaged. Can be on a disk image and globbed. If not set, defaults to %pathname%/*.app. Typically %pathname% points to a disk image downloaded in a prior recipe step.
+   version:
+     required: False
+     description: Version of the app. If not set, will be extracted from the CFBundleShortVersionString in the app's Info.plist.
+   force_pkg_build:
+     required: False
+     description: When set, this forces building a new package even if a package already exists in the output directory with the same identifier and version number. Defaults to False
+   bundleid:
+     required: False
+     description: Bundle identifier of the app. If not set, will be extracted from the CFBundleIdentifier in the app's Info.plist.
+Output variables:
+   app_pkg_creator_summary_result:
+     description: Description of interesting results.
+   version:
+     description: Version of the app.
+   new_package_request:
+     description: True if a new package was actually requested to be built. False if a package with the same filename, identifier and version already exists and thus no package was built (see 'force_pkg_build' input variable.)
+524 tech 11:54:46 ~ $ aprnt ClipGrabMac.pkg
+Processing ClipGrabMac.pkg...
+WARNING: ClipGrabMac.pkg is missing trust info and FAIL_RECIPES_WITHOUT_TRUST_INFO is not set. Proceeding...
+URLTextSearcher
+{'Input': {'re_flags': (
+    IGNORECASE
+),
+           're_pattern': u'https://download.clipgrab.org/(ClipGrab-[^"]*.dmg)"',
+           'result_output_var_name': u'url',
+           'url': u'https://clipgrab.org'}}
+URLTextSearcher: No value supplied for CURL_PATH, setting default value of: /usr/bin/curl
+URLTextSearcher: Found matching text (url): ClipGrab-3.8.5.dmg
+{'Output': {u'url': 'ClipGrab-3.8.5.dmg'}}
+URLDownloader
+{'Input': {'CURL_PATH': '/usr/bin/curl',
+           'url': u'https://download.clipgrab.org/ClipGrab-3.8.5.dmg'}}
+URLDownloader: No value supplied for CHECK_FILESIZE_ONLY, setting default value of: False
+URLDownloader: Storing new Last-Modified header: Mon, 16 Sep 2019 20:18:27 GMT
+URLDownloader: Storing new ETag header: "492c139-592b14e796ac0"
+URLDownloader: Downloaded /Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.pkg.ClipGrabMac/downloads/ClipGrab-3.8.5.dmg
+{'Output': {'download_changed': True,
+            'etag': '"492c139-592b14e796ac0"',
+            'last_modified': 'Mon, 16 Sep 2019 20:18:27 GMT',
+            'pathname': u'/Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.pkg.ClipGrabMac/downloads/ClipGrab-3.8.5.dmg',
+            'url_downloader_summary_result': {'data': {'download_path': u'/Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.pkg.ClipGrabMac/downloads/ClipGrab-3.8.5.dmg'},
+                                              'summary_text': 'The following new items were downloaded:'}}}
+EndOfCheckPhase
+{'Input': {}}
+{'Output': {}}
+CodeSignatureVerifier
+{'Input': {'input_path': u'/Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.pkg.ClipGrabMac/downloads/ClipGrab-3.8.5.dmg/*.app',
+           'requirement': u'identifier "de.clipgrab.ClipGrab" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = E8BJ3ZV5W8'}}
+CodeSignatureVerifier: Mounted disk image /Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.pkg.ClipGrabMac/downloads/ClipGrab-3.8.5.dmg
+CodeSignatureVerifier: Using path '/private/tmp/dmg.TXFoxB/ClipGrab.app' matched from globbed '/private/tmp/dmg.TXFoxB/*.app'.
+CodeSignatureVerifier: Verifying code signature...
+CodeSignatureVerifier: Deep verification enabled...
+CodeSignatureVerifier: Strict verification not defined. Using codesign defaults...
+CodeSignatureVerifier: /private/tmp/dmg.TXFoxB/ClipGrab.app: valid on disk
+CodeSignatureVerifier: /private/tmp/dmg.TXFoxB/ClipGrab.app: satisfies its Designated Requirement
+CodeSignatureVerifier: /private/tmp/dmg.TXFoxB/ClipGrab.app: explicit requirement satisfied
+CodeSignatureVerifier: Signature is valid
+{'Output': {}}
+AppPkgCreator
+{'Input': {}}
+AppPkgCreator: Mounted disk image /Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.pkg.ClipGrabMac/downloads/ClipGrab-3.8.5.dmg
+AppPkgCreator: Using path '/private/tmp/dmg.tWt3zZ/ClipGrab.app' matched from globbed '/private/tmp/dmg.tWt3zZ/*.app'.
+AppPkgCreator: Version: 3.8.5
+AppPkgCreator: BundleID: de.clipgrab.ClipGrab
+AppPkgCreator: Copied /private/tmp/dmg.tWt3zZ/ClipGrab.app to /Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.pkg.ClipGrabMac/payload/Applications/ClipGrab.app
+AppPkgCreator: Connecting
+AppPkgCreator: Sending packaging request
+AppPkgCreator: Disconnecting
+{'Output': {'app_pkg_creator_summary_result': {'data': {'identifier': u'de.clipgrab.ClipGrab',
+                                                        'pkg_path': '/Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.pkg.ClipGrabMac/ClipGrab-3.8.5.pkg',
+                                                        'version': u'3.8.5'},
+                                               'report_fields': ['identifier',
+                                                                 'version',
+                                                                 'pkg_path'],
+                                               'summary_text': 'The following packages were built:'},
+            'new_package_request': True,
+            'version': u'3.8.5'}}
+Receipt written to /Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.pkg.ClipGrabMac/receipts/ClipGrabMac-receipt-20190930-120030.plist
+
+The following packages were built:
+    Identifier            Version  Pkg Path                                                                                 
+    ----------            -------  --------                                                                                 
+    de.clipgrab.ClipGrab  3.8.5    /Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.pkg.ClipGrabMac/ClipGrab-3.8.5.pkg  
+
+The following new items were downloaded:
+    Download Path                                                                                      
+    -------------                                                                                      
+    /Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.pkg.ClipGrabMac/downloads/ClipGrab-3.8.5.dmg  
+525 tech 12:00:31 ~ $ !!
+aprnt ClipGrabMac.pkg
+Processing ClipGrabMac.pkg...
+WARNING: ClipGrabMac.pkg is missing trust info and FAIL_RECIPES_WITHOUT_TRUST_INFO is not set. Proceeding...
+URLTextSearcher
+{'Input': {'re_flags': (
+    IGNORECASE
+),
+           're_pattern': u'https://download.clipgrab.org/(ClipGrab-[^"]*.dmg)"',
+           'result_output_var_name': u'url',
+           'url': u'https://clipgrab.org'}}
+URLTextSearcher: No value supplied for CURL_PATH, setting default value of: /usr/bin/curl
+URLTextSearcher: Found matching text (url): ClipGrab-3.8.5.dmg
+{'Output': {u'url': 'ClipGrab-3.8.5.dmg'}}
+URLDownloader
+{'Input': {'CURL_PATH': '/usr/bin/curl',
+           'url': u'https://download.clipgrab.org/ClipGrab-3.8.5.dmg'}}
+URLDownloader: No value supplied for CHECK_FILESIZE_ONLY, setting default value of: False
+URLDownloader: Item at URL is unchanged.
+URLDownloader: Using existing /Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.pkg.ClipGrabMac/downloads/ClipGrab-3.8.5.dmg
+{'Output': {'pathname': u'/Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.pkg.ClipGrabMac/downloads/ClipGrab-3.8.5.dmg'}}
+EndOfCheckPhase
+{'Input': {}}
+{'Output': {}}
+CodeSignatureVerifier
+{'Input': {'input_path': u'/Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.pkg.ClipGrabMac/downloads/ClipGrab-3.8.5.dmg/*.app',
+           'requirement': u'identifier "de.clipgrab.ClipGrab" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = E8BJ3ZV5W8'}}
+CodeSignatureVerifier: Mounted disk image /Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.pkg.ClipGrabMac/downloads/ClipGrab-3.8.5.dmg
+CodeSignatureVerifier: Using path '/private/tmp/dmg.0mBxAN/ClipGrab.app' matched from globbed '/private/tmp/dmg.0mBxAN/*.app'.
+CodeSignatureVerifier: Verifying code signature...
+CodeSignatureVerifier: Deep verification enabled...
+CodeSignatureVerifier: Strict verification not defined. Using codesign defaults...
+CodeSignatureVerifier: /private/tmp/dmg.0mBxAN/ClipGrab.app: valid on disk
+CodeSignatureVerifier: /private/tmp/dmg.0mBxAN/ClipGrab.app: satisfies its Designated Requirement
+CodeSignatureVerifier: /private/tmp/dmg.0mBxAN/ClipGrab.app: explicit requirement satisfied
+CodeSignatureVerifier: Signature is valid
+{'Output': {}}
+AppPkgCreator
+{'Input': {}}
+AppPkgCreator: Mounted disk image /Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.pkg.ClipGrabMac/downloads/ClipGrab-3.8.5.dmg
+AppPkgCreator: Using path '/private/tmp/dmg.wcR6T5/ClipGrab.app' matched from globbed '/private/tmp/dmg.wcR6T5/*.app'.
+AppPkgCreator: Version: 3.8.5
+AppPkgCreator: BundleID: de.clipgrab.ClipGrab
+AppPkgCreator: Package already exists at path /Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.pkg.ClipGrabMac/ClipGrab-3.8.5.pkg.
+AppPkgCreator: Existing package matches version and identifier, not building.
+{'Output': {'version': u'3.8.5'}}
+Receipt written to /Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.pkg.ClipGrabMac/receipts/ClipGrabMac-receipt-20190930-120058.plist
+
+Nothing downloaded, packaged or imported.
+526 tech 12:00:59 ~ $ 

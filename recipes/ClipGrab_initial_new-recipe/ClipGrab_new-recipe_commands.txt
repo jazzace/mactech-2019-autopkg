@@ -1,0 +1,2 @@
+autopkg new-recipe /Users/localadmin/Library/AutoPkg/Recipes/ClipGrabMac.download.recipe  -i com.github.jazzace.download.ClipGrabMac -p com.github.peshay.download.ClipGrab
+autopkg new-recipe /Users/localadmin/Library/AutoPkg/Recipes/ClipGrabMac.pkg.recipe  -i com.github.jazzace.pkg.ClipGrabMac -p com.github.jazzace.download.ClipGrabMac

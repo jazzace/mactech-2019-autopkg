@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Recipe description</string>
+	<key>Identifier</key>
+	<string>com.github.jazzace.download.ClipGrabMac</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>ClipGrabMac</string>
+	</dict>
+	<key>MiniumumVersion</key>
+	<string>1.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.peshay.download.ClipGrab</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>Argument1</key>
+				<string>Value1</string>
+				<key>Argument2</key>
+				<string>Value2</string>
+			</dict>
+			<key>Processor</key>
+			<string>ProcessorName</string>
+		</dict>
+	</array>
+</dict>
+</plist>
