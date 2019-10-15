@@ -1,5 +1,5 @@
 Last login: Mon Sep 30 11:06:35 on console
-501 tech 11:11:55 ~ $ aprnt ClipGrab.download.recipe
+501 localadmin ~ $ aprnt ClipGrab.download.recipe
 Processing ClipGrab.download.recipe...
 WARNING: ClipGrab.download.recipe is missing trust info and FAIL_RECIPES_WITHOUT_TRUST_INFO is not set. Proceeding...
 URLTextSearcher
@@ -34,10 +34,10 @@ The following new items were downloaded:
     Download Path                                                                                       
     -------------                                                                                       
     /Users/localadmin/Library/AutoPkg/Cache/com.github.peshay.download.ClipGrab/downloads/ClipGrab-3.8.5.dmg  
-502 tech 11:22:20 ~ $ open /Users/localadmin/Library/AutoPkg/Cache/com.github.peshay.download.ClipGrab/downloads/ClipGrab-3.8.5.dmg
-503 tech 11:22:34 ~ $ codesigapp /Volumes/ClipGrab\ 3.8.5/ClipGrab.app 
+502 localadmin ~ $ open /Users/localadmin/Library/AutoPkg/Cache/com.github.peshay.download.ClipGrab/downloads/ClipGrab-3.8.5.dmg
+503 localadmin ~ $ codesigapp /Volumes/ClipGrab\ 3.8.5/ClipGrab.app 
 -bash: codesigapp: command not found
-504 tech 11:23:07 ~ $ codesignapp /Volumes/ClipGrab\ 3.8.5/ClipGrab.app 
+504 localadmin ~ $ codesignapp /Volumes/ClipGrab\ 3.8.5/ClipGrab.app 
 Executable=/Volumes/ClipGrab 3.8.5/ClipGrab.app/Contents/MacOS/ClipGrab
 Identifier=de.clipgrab.ClipGrab
 Format=app bundle with Mach-O thin (x86_64)
@@ -76,7 +76,7 @@ Nested=Frameworks/QtQuickWidgets.framework
 Nested=PlugIns/imageformats/libqtiff.dylib
 Nested=PlugIns/iconengines/libqsvgicon.dylib
 designated => identifier "de.clipgrab.ClipGrab" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = E8BJ3ZV5W8
-505 tech 11:23:16 ~ $ ap search ClipGrab
+505 localadmin ~ $ ap search ClipGrab
 
 Name                         Repo                     Path                                    
 ----                         ----                     ----                                    
@@ -85,7 +85,7 @@ ClipGrab.download.recipe     peshay-recipes           ClipGrab/ClipGrab.download
 ClipGrab.munki.recipe        wardsparadox-recipes     ClipGrab/ClipGrab.munki.recipe          
 
 To add a new recipe repo, use 'autopkg repo-add <repo name>'
-506 tech 11:25:49 ~ $ ap add-repo wardsparadox-recipes.git
+506 localadmin ~ $ ap add-repo wardsparadox-recipes.git
 Usage: autopkg <verb> <options>, where <verb> is one of the following:
 
     audit              (Audit one or more recipes.)
@@ -108,7 +108,7 @@ Usage: autopkg <verb> <options>, where <verb> is one of the following:
     version            (Print the current version of autopkg)
 
 autopkg <verb> --help for more help for that verb
-507 tech 11:26:11 ~ $ ap repo-add wardsparadox-recipes.git
+507 localadmin ~ $ ap repo-add wardsparadox-recipes.git
 Attempting git clone...
 
 Adding /Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.wardsparadox-recipes to RECIPE_SEARCH_DIRS...
@@ -151,7 +151,7 @@ Updated search path:
   '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.precursorca-recipes'
   '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.peshay-recipes'
   '/Users/localadmin/Library/AutoPkg/RecipeRepos/com.github.autopkg.wardsparadox-recipes'
-508 tech 11:26:31 ~ $ ap new-recipe -h
+508 localadmin ~ $ ap new-recipe -h
 Usage: autopkg new-recipe [options] recipe_pathname
 Make a new template recipe.
 
@@ -162,14 +162,14 @@ Options:
                         Recipe identifier
   -p PARENT_IDENTIFIER, --parent-identifier=PARENT_IDENTIFIER
                         Parent recipe identifier for this recipe.
-509 tech 11:28:38 ~ $ ap new-recipe -i com.github.jazzace.download.ClipGrabMac -p com.github.peshay.download.ClipGrab
+509 localadmin ~ $ ap new-recipe -i com.github.jazzace.download.ClipGrabMac -p com.github.peshay.download.ClipGrab
 Must specify exactly one recipe pathname!
 Usage: autopkg new-recipe [options] recipe_pathname
 Make a new template recipe.
 
-510 tech 11:29:39 ~ $ ap new-recipe /Users/localadmin/Library/AutoPkg/Recipes/ClipGrabMac.download.recipe  -i com.github.jazzace.download.ClipGrabMac -p com.github.peshay.download.ClipGrab
+510 localadmin ~ $ ap new-recipe /Users/localadmin/Library/AutoPkg/Recipes/ClipGrabMac.download.recipe  -i com.github.jazzace.download.ClipGrabMac -p com.github.peshay.download.ClipGrab
 Saved new recipe to /Users/localadmin/Library/AutoPkg/Recipes/ClipGrabMac.download.recipe
-511 tech 11:30:36 ~ $ ap processor-list
+511 localadmin ~ $ ap processor-list
 Usage: autopkg <verb> <options>, where <verb> is one of the following:
 
     audit              (Audit one or more recipes.)
@@ -192,7 +192,7 @@ Usage: autopkg <verb> <options>, where <verb> is one of the following:
     version            (Print the current version of autopkg)
 
 autopkg <verb> --help for more help for that verb
-512 tech 11:36:24 ~ $ ap list-processors
+512 localadmin ~ $ ap list-processors
 AppDmgVersioner
 AppPkgCreator
 BrewCaskInfoProvider
@@ -235,7 +235,7 @@ URLDownloader
 URLTextSearcher
 Unarchiver
 Versioner
-513 tech 11:36:35 ~ $ appi CodeSignatureVerifier
+513 localadmin ~ $ appi CodeSignatureVerifier
 Description: Verifies application bundle or installer package signature.
 
     Requires version 0.3.1.
@@ -264,7 +264,7 @@ Input variables:
      description: An array of strings defining a list of expected certificate authority names. Complete list of the certificate name chain is required and it needs to be in the correct order. These can be determined by running: 
 	pkgutil --check-signature <path_to_pkg>
 Output variables:
-514 tech 11:37:17 ~ $ appi URLDownloader
+514 localadmin ~ $ appi URLDownloader
 Description: Downloads a URL to the specified download_dir using curl.
 Input variables:
    CHECK_FILESIZE_ONLY:
@@ -304,7 +304,7 @@ Output variables:
      description: etag header for the downloaded item.
    url_downloader_summary_result:
      description: Description of interesting results.
-515 tech 11:37:48 ~ $ aprnt ClipGrabMac.download
+515 localadmin ~ $ aprnt ClipGrabMac.download
 Processing ClipGrabMac.download...
 WARNING: ClipGrabMac.download is missing trust info and FAIL_RECIPES_WITHOUT_TRUST_INFO is not set. Proceeding...
 URLTextSearcher
@@ -352,7 +352,7 @@ The following new items were downloaded:
     Download Path                                                                                           
     -------------                                                                                           
     /Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.download.ClipGrabMac/downloads/ClipGrab-3.8.5.dmg  
-516 tech 11:41:10 ~ $ appi CodeSignatureVerifier
+516 localadmin ~ $ appi CodeSignatureVerifier
 Description: Verifies application bundle or installer package signature.
 
     Requires version 0.3.1.
@@ -381,7 +381,7 @@ Input variables:
      description: An array of strings defining a list of expected certificate authority names. Complete list of the certificate name chain is required and it needs to be in the correct order. These can be determined by running: 
 	pkgutil --check-signature <path_to_pkg>
 Output variables:
-517 tech 11:42:53 ~ $ aprnt ClipGrabMac.download
+517 localadmin ~ $ aprnt ClipGrabMac.download
 Processing ClipGrabMac.download...
 WARNING: ClipGrabMac.download is missing trust info and FAIL_RECIPES_WITHOUT_TRUST_INFO is not set. Proceeding...
 URLTextSearcher
@@ -428,7 +428,7 @@ The following new items were downloaded:
     Download Path                                                                                           
     -------------                                                                                           
     /Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.download.ClipGrabMac/downloads/ClipGrab-3.8.5.dmg  
-518 tech 11:44:31 ~ $ !!
+518 localadmin ~ $ !!
 aprnt ClipGrabMac.download
 Processing ClipGrabMac.download...
 WARNING: ClipGrabMac.download is missing trust info and FAIL_RECIPES_WITHOUT_TRUST_INFO is not set. Proceeding...
@@ -467,7 +467,7 @@ CodeSignatureVerifier: Signature is valid
 Receipt written to /Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.download.ClipGrabMac/receipts/ClipGrabMac-receipt-20190930-114501.plist
 
 Nothing downloaded, packaged or imported.
-519 tech 11:45:01 ~ $ appi AppPkgCreator
+519 localadmin ~ $ appi AppPkgCreator
 Description: Calls autopkgserver to create a package from an application.
 Input variables:
    pkg_path:
@@ -492,7 +492,7 @@ Output variables:
      description: Version of the app.
    new_package_request:
      description: True if a new package was actually requested to be built. False if a package with the same filename, identifier and version already exists and thus no package was built (see 'force_pkg_build' input variable.)
-520 tech 11:47:33 ~ $ history 30
+520 localadmin ~ $ history 30
   491  aprnt "Recipe Robot.install"
   492  reciperobot
   493  ln -s "/Applications/Recipe Robot.app/Contents/Resources/scripts/recipe-robot" /usr/local/bin/recipe-robot
@@ -523,11 +523,11 @@ Output variables:
   518  aprnt ClipGrabMac.download
   519  appi AppPkgCreator
   520  history 30
-521 tech 11:48:24 ~ $ ap new-recipe /Users/localadmin/Desktop/ClipGrabMac.download.recipe  -i com.github.jazzace.download.ClipGrabMac -p com.github.peshay.download.ClipGrab
+521 localadmin ~ $ ap new-recipe /Users/localadmin/Desktop/ClipGrabMac.download.recipe  -i com.github.jazzace.download.ClipGrabMac -p com.github.peshay.download.ClipGrab
 Saved new recipe to /Users/localadmin/Desktop/ClipGrabMac.download.recipe
-522 tech 11:48:55 ~ $ ap new-recipe /Users/localadmin/Library/AutoPkg/Recipes/ClipGrabMac.pkg.recipe  -i com.github.jazzace.pkg.ClipGrabMac -p com.github.jazzace.download.ClipGrabMac
+522 localadmin ~ $ ap new-recipe /Users/localadmin/Library/AutoPkg/Recipes/ClipGrabMac.pkg.recipe  -i com.github.jazzace.pkg.ClipGrabMac -p com.github.jazzace.download.ClipGrabMac
 Saved new recipe to /Users/localadmin/Library/AutoPkg/Recipes/ClipGrabMac.pkg.recipe
-523 tech 11:49:48 ~ $ !519
+523 localadmin ~ $ !519
 appi AppPkgCreator
 Description: Calls autopkgserver to create a package from an application.
 Input variables:
@@ -553,7 +553,7 @@ Output variables:
      description: Version of the app.
    new_package_request:
      description: True if a new package was actually requested to be built. False if a package with the same filename, identifier and version already exists and thus no package was built (see 'force_pkg_build' input variable.)
-524 tech 11:54:46 ~ $ aprnt ClipGrabMac.pkg
+524 localadmin ~ $ aprnt ClipGrabMac.pkg
 Processing ClipGrabMac.pkg...
 WARNING: ClipGrabMac.pkg is missing trust info and FAIL_RECIPES_WITHOUT_TRUST_INFO is not set. Proceeding...
 URLTextSearcher
@@ -625,7 +625,7 @@ The following new items were downloaded:
     Download Path                                                                                      
     -------------                                                                                      
     /Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.pkg.ClipGrabMac/downloads/ClipGrab-3.8.5.dmg  
-525 tech 12:00:31 ~ $ !!
+525 localadmin ~ $ !!
 aprnt ClipGrabMac.pkg
 Processing ClipGrabMac.pkg...
 WARNING: ClipGrabMac.pkg is missing trust info and FAIL_RECIPES_WITHOUT_TRUST_INFO is not set. Proceeding...
@@ -674,4 +674,4 @@ AppPkgCreator: Existing package matches version and identifier, not building.
 Receipt written to /Users/localadmin/Library/AutoPkg/Cache/com.github.jazzace.pkg.ClipGrabMac/receipts/ClipGrabMac-receipt-20190930-120058.plist
 
 Nothing downloaded, packaged or imported.
-526 tech 12:00:59 ~ $ 
+526 localadmin ~ $ 
