@@ -15,7 +15,7 @@ Since there's a lot of code on the slides, you can either examine the code on th
 * [Rich Trouton MS Excel 365 pkg recipe](https://github.com/autopkg/rtrouton-recipes/blob/master/MicrosoftExcel365/MicrosoftExcel365.pkg.recipe)
 
 ## Slide Deck
-The slides, with numerous live links, can be [downloaded as a PDF from this repository.](https://github.com/jazzace/mactech-2019-autopkg/blob/master/Writing_AutoPkg_Recipes_sildes.pdf)
+The slides, with numerous live links, can be [downloaded as a PDF from this repository.](https://github.com/jazzace/mactech-2019-autopkg/blob/master/writing-autopkg-recipes-slides.pdf)
 
 ## Related Blog Posts
 My blog posts specifically related to the Microsoft Office recipes are these ones:
