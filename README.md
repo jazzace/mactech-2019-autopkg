@@ -14,8 +14,8 @@ Since there's a lot of code on the slides, you can either examine the code on th
 * [Core MS Office recipes custom processor](https://github.com/autopkg/recipes/blob/master/MSOfficeUpdates/MSOfficeMacURLandUpdateInfoProvider.py)
 * [Rich Trouton MS Excel 365 pkg recipe](https://github.com/autopkg/rtrouton-recipes/blob/master/MicrosoftExcel365/MicrosoftExcel365.pkg.recipe)
 
-## Slide Deck
-The slides, with numerous live links, can be [downloaded as a PDF from this repository.](https://github.com/jazzace/mactech-2019-autopkg/blob/master/writing-autopkg-recipes-slides.pdf)
+## Presentation
+The slides, with numerous live links, can be [downloaded as a PDF from this repository](https://github.com/jazzace/mactech-2019-autopkg/blob/master/writing-autopkg-recipes-slides.pdf). If you wish to view a video of the presentation, the conference organizers have [posted it to their YouTube channel](https://youtu.be/Pmm__UGbctg).
 
 ## Related Blog Posts
 My blog posts specifically related to the Microsoft Office recipes are these ones:
